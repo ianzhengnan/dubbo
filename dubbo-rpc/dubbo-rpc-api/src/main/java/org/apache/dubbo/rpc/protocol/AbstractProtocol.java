@@ -42,6 +42,11 @@ public abstract class AbstractProtocol implements Protocol {
 
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
+    @Override
+    public <T> Exporter<T> export(Invoker<T> invoker) throws RpcException {
+        return null;
+    }
+
     protected final Map<String, Exporter<?>> exporterMap = new ConcurrentHashMap<String, Exporter<?>>();
 
     //TODO SoftReference
